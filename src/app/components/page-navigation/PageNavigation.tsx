@@ -7,16 +7,15 @@ import { PageTab } from "./PageTab";
 export interface PageNavProps {
   id: string;
   name: string;
-  icon: "info" | "details" | "other" | "ending";
+  icon: "info" | "file" | "ending" | "check";
 }
 
 export const PageNavigation = () => {
-  // We'll start with some hardcoded data and manage it with useState.
   const initialPages: PageNavProps[] = [
     { id: "1", name: "Info", icon: "info" },
-    { id: "2", name: "Details", icon: "details" },
-    { id: "3", name: "Other", icon: "other" },
-    { id: "4", name: "Ending", icon: "ending" },
+    { id: "2", name: "Details", icon: "file" },
+    { id: "3", name: "Other", icon: "file" },
+    { id: "4", name: "Ending", icon: "check" },
   ];
 
   const [pages, setPages] = useState<PageNavProps[]>(initialPages);
@@ -26,8 +25,8 @@ export const PageNavigation = () => {
   const handleAddPage = (index: number) => {
     const newPage: PageNavProps = {
       id: crypto.randomUUID(), // Generate a unique ID for the new page
-      name: `New Page ${pages.length + 1}`,
-      icon: "details", // Default icon for new pages
+      name: `Other ${pages.length + 1}`,
+      icon: "file", // Default icon for new pages
     };
 
     // Create a new array with the new page inserted at the correct position
@@ -38,26 +37,33 @@ export const PageNavigation = () => {
   };
 
   return (
-    <div className='bg-white p-4 rounded-lg shadow-md font-sans'>
-      <div className='flex items-center'>
+    <div className="h-[72px] rounded-lg bg-white p-4 font-sans shadow-md">
+      <div className="flex items-center">
         {pages.map((page, index) => (
-          <PageTab
-            key={page.id}
-            page={page}
-            isActive={page.id === activePageId}
-            onClick={() => setActivePageId(page.id)}
-            onAddPage={() => handleAddPage(index + 1)}
-            isLast={index === pages.length - 1}
-          />
+          <div key={index} className="flex items-center">
+            <PageTab
+              page={page}
+              isActive={page.id === activePageId}
+              onClick={() => setActivePageId(page.id)}
+            />
+
+            <button
+              onClick={() => handleAddPage(index + 1)}
+              className="flex h-4 w-4 items-center justify-center rounded-full border border-gray-200 bg-white p-3 opacity-60 shadow-sm transition-opacity hover:opacity-100"
+              aria-label="Add new page"
+            >
+              <Plus className="h-3 w-3 text-black" />
+            </button>
+          </div>
         ))}
 
         {/* The final button to add a new page at the end */}
         <button
           onClick={() => handleAddPage(pages.length)}
-          className='flex items-center space-x-2 py-2 px-4 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 transition-colors ml-2'
+          className="ml-2 flex items-center space-x-2 rounded-lg border border-gray-300 bg-white px-4 py-2 shadow-sm transition-colors hover:bg-gray-50"
         >
-          <Plus className='w-4 h-4 text-gray-600' />
-          <span className='text-gray-700 font-medium'>Add page</span>
+          <Plus className="h-4 w-4 text-gray-600" />
+          <span className="font-medium text-gray-700">Add page</span>
         </button>
       </div>
     </div>
