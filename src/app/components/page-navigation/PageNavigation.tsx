@@ -37,30 +37,31 @@ export const PageNavigation = () => {
   };
 
   return (
-    <div className="h-[72px] rounded-lg bg-white p-4 font-sans shadow-md">
-      <div className="flex items-center">
+    <div className="has-dotted-line-bg relative z-0 h-[72px] rounded-lg bg-white p-5 font-sans shadow-md">
+      <div className="flex items-center gap-2">
         {pages.map((page, index) => (
-          <div key={index} className="flex items-center">
+          <div key={index} className="z-10 flex items-center gap-2">
             <PageTab
               page={page}
               isActive={page.id === activePageId}
               onClick={() => setActivePageId(page.id)}
             />
-
-            <button
-              onClick={() => handleAddPage(index + 1)}
-              className="flex h-4 w-4 items-center justify-center rounded-full border border-gray-200 bg-white p-3 opacity-60 shadow-sm transition-opacity hover:opacity-100"
-              aria-label="Add new page"
-            >
-              <Plus className="h-3 w-3 text-black" />
-            </button>
+            {pages.length - 1 > index && (
+              <button
+                onClick={() => handleAddPage(index + 1)}
+                className="z-10 flex h-4 w-4 items-center justify-center rounded-full border border-gray-200 bg-white opacity-0 shadow-sm transition-all hover:mx-4 hover:opacity-100"
+                aria-label="Add new page"
+              >
+                <Plus className="h-3 w-3 text-black" />
+              </button>
+            )}
           </div>
         ))}
 
         {/* The final button to add a new page at the end */}
         <button
           onClick={() => handleAddPage(pages.length)}
-          className="ml-2 flex items-center space-x-2 rounded-lg border border-gray-300 bg-white px-4 py-2 shadow-sm transition-colors hover:bg-gray-50"
+          className="z-10 mx-3 flex h-8 items-center space-x-2 rounded-lg border border-gray-300 bg-white px-2 py-2 shadow-sm transition-colors hover:bg-gray-50"
         >
           <Plus className="h-4 w-4 text-gray-600" />
           <span className="font-medium text-gray-700">Add page</span>
