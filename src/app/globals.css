@@ -40,9 +40,9 @@ button {
   background-image: repeating-linear-gradient(
     to right,
     #e5e7eb,
-    /* Cor cinza do Tailwind (gray-200) */ #e5e7eb 6px,
-    transparent 6px,
-    transparent 10px
+    /* Cor cinza do Tailwind (gray-200) */ #e5e7eb 5px,
+    transparent 5px,
+    transparent 8px
   );
   z-index: 0;
 }
