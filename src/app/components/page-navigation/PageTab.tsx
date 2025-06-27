@@ -1,5 +1,7 @@
-import { FileText, CircleCheck, Plus, MoreHorizontal } from "lucide-react";
+import FileIcon from "@/components/icons/FileIcon";
 import { PageNavProps } from "./PageNavigation";
+import InfoIcon from "@/components/icons/InfoIcon";
+import CheckIcon from "@/components/icons/CheckIcon";
 
 type PageTabProps = {
   page: PageNavProps;
@@ -8,31 +10,35 @@ type PageTabProps = {
 };
 
 export const PageTab = ({ page, isActive, onClick }: PageTabProps) => {
-  const IconDisplay = () => {
-    const src = `/assets/${page.icon}.svg`;
-    return (
-      <div className={`relative h-5 w-5 flex-shrink-0`}>
-        <img
-          src={src}
-          alt={`${page.name} icon`}
-          className={`h-full w-full ${isActive ? "active-icon-filter" : ""}`}
-        />
-      </div>
-    );
-  };
+  const iconClass = `relative w-5 h-5 flex-shrink-0 ${isActive ? "text-(--color-orange-icon)" : "text-(--color-gray-text)"}`;
+
+  let iconElement;
+  switch (page.icon) {
+    case "info":
+      iconElement = <InfoIcon className={iconClass} />;
+      break;
+    case "file":
+      iconElement = <FileIcon className={iconClass} />;
+      break;
+    case "check":
+      iconElement = <CheckIcon className={iconClass} />;
+      break;
+    default:
+      iconElement = <FileIcon className={iconClass} />;
+  }
 
   return (
     <button
       onClick={onClick}
-      className={`px flex h-8 items-center space-x-2 rounded-lg bg-white px-2 py-2 shadow-sm transition-all duration-200 ease-in-out ${
+      className={`px z-10 flex h-8 items-center space-x-2 rounded-lg border px-2 py-2 shadow-sm transition-all duration-200 ease-in-out ${
         isActive
-          ? "border border-orange-200 bg-orange-50"
-          : "border border-gray-200 bg-gray-100 hover:bg-gray-200"
+          ? "border-(--color-blue-focused-border) bg-white"
+          : "border-(--color-gray-default) bg-(--color-gray-default) hover:border-(--color-gray-hover) hover:bg-(--color-gray-hover)"
       } `}
     >
-      <IconDisplay />
+      {iconElement}
       <span
-        className={`font-medium ${isActive ? "text-gray-800" : "text-gray-600"}`}
+        className={`font-medium ${isActive ? "text-(--color-black-text)" : "text-(--color-gray-text)"}`}
       >
         {page.name}
       </span>
