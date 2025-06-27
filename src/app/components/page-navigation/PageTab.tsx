@@ -1,7 +1,7 @@
-import FileIcon from "@/components/icons/FileIcon";
+import CheckIcon from "../icons/CheckIcon";
+import FileIcon from "../icons/FileIcon";
+import InfoIcon from "../icons/InfoIcon";
 import { PageNavProps } from "./PageNavigation";
-import InfoIcon from "@/components/icons/InfoIcon";
-import CheckIcon from "@/components/icons/CheckIcon";
 
 type PageTabProps = {
   page: PageNavProps;
