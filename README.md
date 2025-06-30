@@ -17,7 +17,7 @@ All features requested in the assignment have been implemented:
 - **Live Demo:** [**mtust-fillout-challenge.vercel.app**](https://mtust-fillout-challenge.vercel.app/)
 - **GitHub Repository:** [**github.com/marcelotust/fillout-page-navigation**](https://github.com/marcelotust/fillout-page-navigation)
 
-## 🛠️ Tech Stack
+## ⚙️ Tech Stack
 
 | Technology       | Why I used it                                                                                                                      |
 | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,7 +29,7 @@ All features requested in the assignment have been implemented:
 | **Lucide React** | Provided a clean and consistent set of icons used throughout the component.                                                        |
 | **Vercel**       | The ideal platform for deploying Next.js applications, offering seamless integration, continuous deployment, and high performance. |
 
-## ⚙️ Running the Project Locally
+## 🧪 Development Mode
 
 To run this project in your local development environment, follow the steps below:
 
@@ -49,19 +49,15 @@ To run this project in your local development environment, follow the steps belo
 
     ```bash
     npm install
-    # or
-    yarn install
-    # or
-    pnpm install
     ```
 
-4.  **Start the development server:**
+### 4. **Start the development server:**
 
     ```bash
     npm run dev
     ```
 
-5.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+### 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ### ✅ Tested on:
 
