@@ -16,14 +16,14 @@ All features requested in the assignment have been implemented:
 
 ---
 
-### 🚀 Links
+## 🚀 Links
 
 - **Live Demo:** [**mtust-fillout-challenge.vercel.app**](https://mtust-fillout-challenge.vercel.app/)
 - **GitHub Repository:** [**github.com/marcelotust/fillout-page-navigation**](https://github.com/marcelotust/fillout-page-navigation)
 
 ---
 
-### 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework:** [Next.js](https://nextjs.org/)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
@@ -35,7 +35,7 @@ All features requested in the assignment have been implemented:
 
 ---
 
-### ⚙️ Running the Project Locally
+## ⚙️ Running the Project Locally
 
 To run this project in your local development environment, follow the steps below:
 
