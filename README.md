@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fillout - Frontend Engineer Take-Home Assessment
 
-## Getting Started
+This project was developed by **Marcelo Tust** as part of the take-home assessment for the Senior Frontend Engineer position at Fillout.
 
-First, run the development server:
+[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/marcelotust/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🚀 Links
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Live Demo:** [**mtust-fillout-challenge.vercel.app**](https://mtust-fillout-challenge.vercel.app/)
+- **GitHub Repository:** [**github.com/marcelotust/fillout-page-navigation**](https://github.com/marcelotust/fillout-page-navigation)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### ✅ Implemented Features
 
-To learn more about Next.js, take a look at the following resources:
+All features requested in the assignment have been implemented:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [x] **Show Pages:** Displays a series of form pages (e.g., “Info”, “Details”, “Other”, “Ending”).
+- [x] **Drag to Re-order:** Support for dragging and dropping tabs to reorder the pages intuitively.
+- [x] **Add Page:** Allows adding a new page between any two existing pages via a `+` button that appears on hover.
+- [x] **Active Page Selection:** Highlights the currently selected page and allows selecting other pages with a click.
+- [x] **Context Menu (Right-Click):** Opens a settings menu on right-click, with options like "Set as first page", "Rename", "Duplicate", and "Delete".
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🛠️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **UI Library:** [React](https://reactjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Drag and Drop:** [dnd-kit](https://dndkit.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### ⚙️ Running the Project Locally
+
+To run this project in your local development environment, follow the steps below:
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone [https://github.com/marcelotust/fillout-page-navigation.git](https://github.com/marcelotust/fillout-page-navigation.git)
+    ```
+
+2.  **Navigate to the project directory:**
+
+    ```bash
+    cd fillout-page-navigation
+    ```
+
+3.  **Install the dependencies:**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+4.  **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+5.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
