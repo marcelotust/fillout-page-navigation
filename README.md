@@ -64,3 +64,7 @@ To run this project in your local development environment, follow the steps belo
     ```
 
 5.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+✅ Tested on:
+
+- Chrome (latest)
