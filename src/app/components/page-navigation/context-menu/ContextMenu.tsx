@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Flag, Edit, Copy, Trash2 } from "lucide-react";
 
 import ContextMenuItem from "./ContextMenuItem";
