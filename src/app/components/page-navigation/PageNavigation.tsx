@@ -46,7 +46,12 @@ export const PageNavigation = () => {
 
   const handleOpenContextMenu = (event: React.MouseEvent, pageId: string) => {
     event.preventDefault(); // Cancel the default context menu
-    const rect = event.currentTarget.getBoundingClientRect();
+
+    let target = event.currentTarget as HTMLElement;
+    if (target.id !== "page-tab")
+      target = event.currentTarget.parentElement as HTMLElement; // Ensure we get the parent element for correct positioning
+    const rect = target.getBoundingClientRect();
+
     setContextMenu({
       isOpen: true,
       pageId: pageId,

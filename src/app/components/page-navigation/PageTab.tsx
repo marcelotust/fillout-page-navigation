@@ -1,8 +1,8 @@
-import { ListIcon } from "lucide-react";
 import CheckIcon from "../icons/CheckIcon";
 import FileIcon from "../icons/FileIcon";
 import InfoIcon from "../icons/InfoIcon";
 import { PageNavProps } from "./PageNavigation";
+import DotGrid from "../icons/DotGrid";
 
 type PageTabProps = {
   page: PageNavProps;
@@ -36,7 +36,8 @@ export const PageTab = ({
 
   return (
     <div
-      onContextMenu={onContextMenu}
+      id="page-tab"
+      onContextMenu={isActive ? onContextMenu : undefined}
       onClick={onClick}
       className={`px z-10 flex h-8 cursor-pointer items-center space-x-2 rounded-lg border px-2 py-2 shadow-sm transition-colors duration-300 ${
         isActive
@@ -59,9 +60,9 @@ export const PageTab = ({
             e.stopPropagation(); // cancel parent click event
             onContextMenu(e);
           }}
-          className="rounded-md hover:bg-gray-200"
+          className="group -m-1 rounded-full p-1 transition-colors duration-300 hover:bg-gray-200"
         >
-          <ListIcon className="relative h-5 w-5 flex-shrink-0 text-(--color-gray-text)" />
+          <DotGrid className="relative h-4 w-4 text-gray-400 transition-colors duration-300 group-hover:text-blue-400" />
         </button>
       )}
     </div>
