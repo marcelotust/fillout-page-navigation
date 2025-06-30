@@ -8,11 +8,11 @@ This is my solution for the **Fillout** take-home assessment for the Senior Fron
 
 All features requested in the assignment have been implemented:
 
-- [x] **Show Pages:** Displays a series of form pages (e.g., “Info”, “Details”, “Other”, “Ending”).
-- [x] **Drag to Re-order:** Support for dragging and dropping tabs to reorder the pages intuitively.
-- [x] **Add Page:** Allows adding a new page between any two existing pages via a `+` button that appears on hover.
-- [x] **Active Page Selection:** Highlights the currently selected page and allows selecting other pages with a click.
-- [x] **Context Menu (Right-Click):** Opens a settings menu on right-click, with options like "Set as first page", "Rename", "Duplicate", and "Delete".
+- **Show Pages:** Displays a series of form pages (e.g., “Info”, “Details”, “Other”, “Ending”).
+- **Drag to Re-order:** Support for dragging and dropping tabs to reorder the pages intuitively.
+- **Add Page:** Allows adding a new page between any two existing pages via a `+` button that appears on hover.
+- **Active Page Selection:** Highlights the currently selected page and allows selecting other pages with a click.
+- **Context Menu (Right-Click):** Opens a settings menu on right-click, with options like "Set as first page", "Rename", "Duplicate", and "Delete".
 
 ## 🚀 Links
 
