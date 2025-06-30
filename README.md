@@ -14,26 +14,22 @@ All features requested in the assignment have been implemented:
 - [x] **Active Page Selection:** Highlights the currently selected page and allows selecting other pages with a click.
 - [x] **Context Menu (Right-Click):** Opens a settings menu on right-click, with options like "Set as first page", "Rename", "Duplicate", and "Delete".
 
----
-
 ## 🚀 Links
 
 - **Live Demo:** [**mtust-fillout-challenge.vercel.app**](https://mtust-fillout-challenge.vercel.app/)
 - **GitHub Repository:** [**github.com/marcelotust/fillout-page-navigation**](https://github.com/marcelotust/fillout-page-navigation)
 
----
-
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **UI Library:** [React](https://reactjs.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Drag and Drop:** [dnd-kit](https://dndkit.com/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Deployment:** [Vercel](https://vercel.com/)
-
----
+| Technology       | Why I used it                                                                                                                      |
+| :--------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| **Next.js**      | A powerful React framework that provides a robust structure with the App Router, optimizing performance and developer experience.  |
+| **React**        | The core UI library, enabling the creation of modular, stateful, and interactive components.                                       |
+| **TypeScript**   | For adding static typing to the codebase, ensuring better maintainability, scalability, and fewer runtime errors.                  |
+| **Tailwind CSS** | A utility-first CSS framework for rapidly building custom user interfaces directly in the markup, ensuring design consistency.     |
+| **dnd-kit**      | A modern, lightweight, and accessible library for building the drag-and-drop reordering feature.                                   |
+| **Lucide React** | Provided a clean and consistent set of icons used throughout the component.                                                        |
+| **Vercel**       | The ideal platform for deploying Next.js applications, offering seamless integration, continuous deployment, and high performance. |
 
 ## ⚙️ Running the Project Locally
 
