@@ -51,13 +51,13 @@ To run this project in your local development environment, follow the steps belo
     npm install
     ```
 
-### 4. **Start the development server:**
+4.  **Start the development server:**
 
     ```bash
     npm run dev
     ```
 
-### 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+5.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ### ✅ Tested on:
 
