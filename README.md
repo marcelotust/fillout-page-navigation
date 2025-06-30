@@ -1,18 +1,10 @@
 # Fillout - Frontend Engineer Take-Home Assessment
 
-This project was developed by **Marcelo Tust** as part of the take-home assessment for the Senior Frontend Engineer position at Fillout.
-[LinkedIn/marcelotust](https://www.linkedin.com/in/marcelotust/)
+This is my solution for the **Fillout** take-home assessment for the Senior Frontend Engineer position.
 
----
+[**LinkedIn/marcelotust**](https://www.linkedin.com/in/marcelotust/)
 
-### 🚀 Links
-
-- **Live Demo:** [**mtust-fillout-challenge.vercel.app**](https://mtust-fillout-challenge.vercel.app/)
-- **GitHub Repository:** [**github.com/marcelotust/fillout-page-navigation**](https://github.com/marcelotust/fillout-page-navigation)
-
----
-
-### ✅ Implemented Features
+## 🧠 Challenge Summary
 
 All features requested in the assignment have been implemented:
 
@@ -21,6 +13,13 @@ All features requested in the assignment have been implemented:
 - [x] **Add Page:** Allows adding a new page between any two existing pages via a `+` button that appears on hover.
 - [x] **Active Page Selection:** Highlights the currently selected page and allows selecting other pages with a click.
 - [x] **Context Menu (Right-Click):** Opens a settings menu on right-click, with options like "Set as first page", "Rename", "Duplicate", and "Delete".
+
+---
+
+### 🚀 Links
+
+- **Live Demo:** [**mtust-fillout-challenge.vercel.app**](https://mtust-fillout-challenge.vercel.app/)
+- **GitHub Repository:** [**github.com/marcelotust/fillout-page-navigation**](https://github.com/marcelotust/fillout-page-navigation)
 
 ---
 
