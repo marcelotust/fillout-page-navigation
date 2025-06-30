@@ -2,8 +2,6 @@
 
 This is my solution for the **Fillout** take-home assessment for the Senior Frontend Engineer position.
 
-[**LinkedIn/marcelotust**](https://www.linkedin.com/in/marcelotust/)
-
 ## 🧠 Challenge Summary
 
 All features requested in the assignment have been implemented:
