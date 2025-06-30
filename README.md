@@ -1,8 +1,7 @@
 # Fillout - Frontend Engineer Take-Home Assessment
 
 This project was developed by **Marcelo Tust** as part of the take-home assessment for the Senior Frontend Engineer position at Fillout.
-
-[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/marcelotust/)
+[LinkedIn/marcelotust](https://www.linkedin.com/in/marcelotust/)
 
 ---
 
