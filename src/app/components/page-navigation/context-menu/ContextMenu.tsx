@@ -40,7 +40,7 @@ const ContextMenu = ({
   return (
     <div
       ref={menuRef}
-      className="absolute z-20 w-56 rounded-lg border border-(--color-gray-default) bg-white p-2 shadow-sm"
+      className="absolute z-20 w-60 rounded-lg border border-(--color-gray-default) bg-white p-2 shadow-sm"
       style={{
         top: `${position.y - 10}px`,
         left: `${position.x}px`,
