@@ -1,16 +1,37 @@
 "use client";
 
 import React, { useState } from "react";
+import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  horizontalListSortingStrategy,
+  SortableContext,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
 import { Plus } from "lucide-react";
 import { PageTab } from "./PageTab";
 import { AddPageButton } from "./AddPageButton";
 import ContextMenu from "./context-menu/ContextMenu";
+import { restrictToHorizontalAxis } from "@dnd-kit/modifiers";
+import { SortablePageTab } from "./SortablePageTab";
 
 export interface PageNavProps {
   id: string;
   name: string;
   icon: "info" | "file" | "ending" | "check";
 }
+
+const generateId = () =>
+  typeof window !== "undefined" && crypto.randomUUID
+    ? crypto.randomUUID()
+    : Math.random().toString(36).substr(2, 9);
 
 export const PageNavigation = () => {
   const initialPages: PageNavProps[] = [
@@ -29,10 +50,19 @@ export const PageNavigation = () => {
     position: { x: 0, y: 0 },
   });
 
+  // DnD Kit sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 5,
+      },
+    }),
+  );
+
   // Function to add a new page at a specific index
   const handleAddPage = (index: number) => {
     const newPage: PageNavProps = {
-      id: crypto.randomUUID(), // Generate a unique ID for the new page
+      id: generateId(), // Generate a unique ID for the new page
       name: `Other ${pages.length + 1}`,
       icon: "file", // Default icon for new pages
     };
@@ -72,34 +102,57 @@ export const PageNavigation = () => {
     handleCloseContextMenu();
   };
 
+  // DnD Kit: handle drag end
+  const handleDragEnd = (event: any) => {
+    const { active, over } = event;
+    if (active.id !== over?.id) {
+      const oldIndex = pages.findIndex((p) => p.id === active.id);
+      const newIndex = pages.findIndex((p) => p.id === over.id);
+      setPages((pages) => arrayMove(pages, oldIndex, newIndex));
+    }
+  };
+
   return (
     <div className="h-[72px] w-full overflow-hidden bg-white p-5 font-sans shadow-md">
-      <div className="has-dotted-line-bg relative inline-flex">
-        {pages.map((page, index) => (
-          <div key={index} className="flex items-center">
-            <PageTab
-              page={page}
-              isActive={page.id === activePageId}
-              onClick={() => setActivePageId(page.id)}
-              onContextMenu={(e) => handleOpenContextMenu(e, page.id)}
-            />
-            {pages.length - 1 > index && (
-              <AddPageButton onAddPage={() => handleAddPage(index + 1)} />
-            )}
-          </div>
-        ))}
-
-        {/* The final button to add a new page at the end */}
-        <button
-          onClick={() => handleAddPage(pages.length)}
-          className="group z-10 mx-6 flex h-8 items-center space-x-1 rounded-lg border border-gray-300 bg-white px-2 py-2 shadow-sm"
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleDragEnd}
+        modifiers={[restrictToHorizontalAxis]}
+      >
+        <SortableContext
+          items={pages.map((p) => p.id)}
+          strategy={horizontalListSortingStrategy}
         >
-          <Plus className="h-4 w-4 text-(--color-black-text) transition-colors duration-300 group-hover:text-blue-400" />
-          <span className="truncate font-medium text-(--color-black-text) transition-colors duration-300 group-hover:text-blue-400">
-            Add page
-          </span>
-        </button>
-      </div>
+          <div className="has-dotted-line-bg relative inline-flex">
+            {pages.map((page, index) => (
+              <div key={page.id} className="flex items-center">
+                <SortablePageTab
+                  page={page}
+                  isActive={page.id === activePageId}
+                  onClick={() => setActivePageId(page.id)}
+                  onContextMenu={(e: React.MouseEvent) =>
+                    handleOpenContextMenu(e, page.id)
+                  }
+                />
+                {pages.length - 1 > index && (
+                  <AddPageButton onAddPage={() => handleAddPage(index + 1)} />
+                )}
+              </div>
+            ))}
+            {/* The final button to add a new page at the end */}
+            <button
+              onClick={() => handleAddPage(pages.length)}
+              className="group z-10 mx-6 flex h-8 items-center space-x-1 rounded-lg border border-gray-300 bg-white px-2 py-2 shadow-sm"
+            >
+              <Plus className="h-4 w-4 text-(--color-black-text) transition-colors duration-300 group-hover:text-blue-400" />
+              <span className="truncate font-medium text-(--color-black-text) transition-colors duration-300 select-none group-hover:text-blue-400">
+                Add page
+              </span>
+            </button>
+          </div>
+        </SortableContext>
+      </DndContext>
 
       {/* Context Menu for Settings */}
       {contextMenu.isOpen && (

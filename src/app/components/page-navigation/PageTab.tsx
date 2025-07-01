@@ -48,7 +48,7 @@ export const PageTab = ({
       <div className="flex items-center space-x-2">
         {iconElement}
         <span
-          className={`truncate font-medium ${isActive ? "text-(--color-black-text)" : "text-(--color-gray-text)"}`}
+          className={`truncate font-medium select-none ${isActive ? "text-(--color-black-text)" : "text-(--color-gray-text)"}`}
         >
           {page.name}
         </span>
