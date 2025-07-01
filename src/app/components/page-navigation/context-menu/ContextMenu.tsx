@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { Flag, Edit, Copy, Trash2 } from "lucide-react";
 
 import ContextMenuItem from "./ContextMenuItem";
+import FlagIcon from "../../icons/Flag";
+import PencilIcon from "../../icons/Pencil";
+import CopyIcon from "../../icons/Copy";
+import DuplicateIcon from "../../icons/Duplicate";
+import GarbageIcon from "../../icons/Garbage";
 
 type ContextMenuProps = {
   position: { x: number; y: number };
@@ -54,22 +58,22 @@ const ContextMenu = ({
       <ul className="space-y-1">
         <ContextMenuItem
           label="Set as first page"
-          icon={<Flag className="mr-3 h-5 w-5" />}
+          icon={<FlagIcon className="mr-3 h-5 w-5" />}
           onClick={onSetFirst}
         />
         <ContextMenuItem
           label="Rename"
-          icon={<Edit className="mr-3 h-5 w-5" />}
+          icon={<PencilIcon className="mr-3 h-5 w-5" />}
           onClick={onRename}
         />
         <ContextMenuItem
           label="Copy"
-          icon={<Copy className="mr-3 h-5 w-5" />}
+          icon={<CopyIcon className="mr-3 h-5 w-5" />}
           onClick={onCopy}
         />
         <ContextMenuItem
           label="Duplicate"
-          icon={<Copy className="mr-3 h-5 w-5" />}
+          icon={<DuplicateIcon className="mr-3 h-5 w-5" />}
           onClick={onDuplicate}
         />
       </ul>
@@ -77,7 +81,7 @@ const ContextMenu = ({
       <ul>
         <ContextMenuItem
           label="Delete"
-          icon={<Trash2 className="mr-3 h-5 w-5" />}
+          icon={<GarbageIcon className="mr-3 h-5 w-5" />}
           onClick={onDelete}
           isDestructive
         />
