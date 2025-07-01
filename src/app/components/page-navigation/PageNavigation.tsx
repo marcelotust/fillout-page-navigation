@@ -12,8 +12,6 @@ import {
   arrayMove,
   horizontalListSortingStrategy,
   SortableContext,
-  useSortable,
-  verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { Plus } from "lucide-react";
 import { PageTab } from "./PageTab";
