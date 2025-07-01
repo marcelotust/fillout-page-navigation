@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Page Navigation Example",
+  title: "Page Navigation",
   description: "Fillout Page Navigation Challenge",
 };
 
