@@ -7,6 +7,7 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
+  DragEndEvent,
 } from "@dnd-kit/core";
 import {
   arrayMove,
@@ -100,11 +101,11 @@ export const PageNavigation = () => {
   };
 
   // DnD Kit: handle drag end
-  const handleDragEnd = (event: any) => {
+  const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
     if (active.id !== over?.id) {
       const oldIndex = pages.findIndex((p) => p.id === active.id);
-      const newIndex = pages.findIndex((p) => p.id === over.id);
+      const newIndex = pages.findIndex((p) => p.id === over?.id);
       setPages((pages) => arrayMove(pages, oldIndex, newIndex));
     }
   };
