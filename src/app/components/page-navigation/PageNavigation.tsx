@@ -73,7 +73,7 @@ export const PageNavigation = () => {
   };
 
   return (
-    <div className="h-[72px] w-full bg-white p-5 font-sans shadow-md">
+    <div className="h-[72px] w-full overflow-hidden bg-white p-5 font-sans shadow-md">
       <div className="has-dotted-line-bg relative inline-flex">
         {pages.map((page, index) => (
           <div key={index} className="flex items-center">
@@ -95,7 +95,7 @@ export const PageNavigation = () => {
           className="group z-10 mx-6 flex h-8 items-center space-x-1 rounded-lg border border-gray-300 bg-white px-2 py-2 shadow-sm"
         >
           <Plus className="h-4 w-4 text-(--color-black-text) transition-colors duration-300 group-hover:text-blue-400" />
-          <span className="font-medium text-(--color-black-text) transition-colors duration-300 group-hover:text-blue-400">
+          <span className="truncate font-medium text-(--color-black-text) transition-colors duration-300 group-hover:text-blue-400">
             Add page
           </span>
         </button>
