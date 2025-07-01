@@ -2,8 +2,21 @@ import { useSortable } from "@dnd-kit/sortable";
 import { PageTab } from "./PageTab";
 import { CSS } from "@dnd-kit/utilities";
 import React from "react";
+import type { PageNavProps } from "./PageNavigation";
 
-export const SortablePageTab = (props: any) => {
+type SortablePageTabProps = {
+  page: PageNavProps;
+  isActive: boolean;
+  onClick: () => void;
+  onContextMenu: (event: React.MouseEvent) => void;
+};
+
+export const SortablePageTab = ({
+  page,
+  isActive,
+  onClick,
+  onContextMenu,
+}: SortablePageTabProps) => {
   const {
     attributes,
     listeners,
@@ -11,7 +24,8 @@ export const SortablePageTab = (props: any) => {
     transform,
     transition,
     isDragging,
-  } = useSortable({ id: props.page.id });
+  } = useSortable({ id: page.id });
+
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
@@ -21,7 +35,12 @@ export const SortablePageTab = (props: any) => {
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <PageTab {...props} />
+      <PageTab
+        page={page}
+        isActive={isActive}
+        onClick={onClick}
+        onContextMenu={onContextMenu}
+      />
     </div>
   );
 };
