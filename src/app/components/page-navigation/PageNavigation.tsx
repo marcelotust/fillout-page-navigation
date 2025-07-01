@@ -14,7 +14,6 @@ import {
   SortableContext,
 } from "@dnd-kit/sortable";
 import { Plus } from "lucide-react";
-import { PageTab } from "./PageTab";
 import { AddPageButton } from "./AddPageButton";
 import ContextMenu from "./context-menu/ContextMenu";
 import { restrictToHorizontalAxis } from "@dnd-kit/modifiers";
